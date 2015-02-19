@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47226F3D1A8260B300EF228C /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47226F3B1A8260B300EF228C /* HomeController.m */; };
+		47226F3E1A8260B300EF228C /* HomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47226F3C1A8260B300EF228C /* HomeController.xib */; };
+		47226F421A82612900EF228C /* VideoListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47226F401A82612900EF228C /* VideoListCell.m */; };
+		47226F431A82612900EF228C /* VideoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47226F411A82612900EF228C /* VideoListCell.xib */; };
+		47226F471A82615C00EF228C /* VideoDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47226F451A82615C00EF228C /* VideoDetailController.m */; };
+		47226F481A82615C00EF228C /* VideoDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47226F461A82615C00EF228C /* VideoDetailController.xib */; };
+		47226F511A8261E500EF228C /* VideoInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47226F4F1A8261E500EF228C /* VideoInfoCell.m */; };
+		47226F521A8261E500EF228C /* VideoInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47226F501A8261E500EF228C /* VideoInfoCell.xib */; };
+		47226F5B1A8262B700EF228C /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 47226F5A1A8262B700EF228C /* VideoModel.m */; };
+		4729E3521A85AAE10062799B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4729E3511A85AAE10062799B /* MediaPlayer.framework */; };
+		473EBC161A88494500610BF7 /* FilterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473EBC141A88494500610BF7 /* FilterController.m */; };
+		473EBC171A88494500610BF7 /* FilterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 473EBC151A88494500610BF7 /* FilterController.xib */; };
+		4761BD161A88529800FCDDB5 /* FilterHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4761BD151A88529800FCDDB5 /* FilterHeaderCell.m */; };
+		477997621A845BB200DC7539 /* VideoListHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 477997601A845BB200DC7539 /* VideoListHeader.m */; };
+		477997631A845BB200DC7539 /* VideoListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 477997611A845BB200DC7539 /* VideoListHeader.xib */; };
+		47A933E61A8465B2000C7619 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A933E51A8465B2000C7619 /* Utils.m */; };
+		47B4ED7D1A85B8DC00775993 /* VideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4ED7C1A85B8DC00775993 /* VideoController.m */; };
+		47CB05031A825B7500AD075F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CB05021A825B7500AD075F /* main.m */; };
+		47CB05061A825B7500AD075F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CB05051A825B7500AD075F /* AppDelegate.m */; };
+		47CB050E1A825B7500AD075F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47CB050D1A825B7500AD075F /* Images.xcassets */; };
+		47CB05111A825B7500AD075F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47CB050F1A825B7500AD075F /* LaunchScreen.xib */; };
+		47CB051D1A825B7500AD075F /* erotubeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CB051C1A825B7500AD075F /* erotubeTests.m */; };
+		47D354831A83030E00E3139F /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D354821A83030E00E3139F /* DataManager.m */; };
+		B02074564501F8B0FA6DE177 /* libPods-erotube.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 950883AA3DE4CFA13F7659F4 /* libPods-erotube.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		47CB05171A825B7500AD075F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47CB04F51A825B7500AD075F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47CB04FC1A825B7500AD075F;
+			remoteInfo = erotube;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		47226F3A1A8260B300EF228C /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
+		47226F3B1A8260B300EF228C /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
+		47226F3C1A8260B300EF228C /* HomeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeController.xib; sourceTree = "<group>"; };
+		47226F3F1A82612900EF228C /* VideoListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListCell.h; sourceTree = "<group>"; };
+		47226F401A82612900EF228C /* VideoListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListCell.m; sourceTree = "<group>"; };
+		47226F411A82612900EF228C /* VideoListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoListCell.xib; sourceTree = "<group>"; };
+		47226F441A82615C00EF228C /* VideoDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDetailController.h; sourceTree = "<group>"; };
+		47226F451A82615C00EF228C /* VideoDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDetailController.m; sourceTree = "<group>"; };
+		47226F461A82615C00EF228C /* VideoDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoDetailController.xib; sourceTree = "<group>"; };
+		47226F4E1A8261E500EF228C /* VideoInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoInfoCell.h; sourceTree = "<group>"; };
+		47226F4F1A8261E500EF228C /* VideoInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoInfoCell.m; sourceTree = "<group>"; };
+		47226F501A8261E500EF228C /* VideoInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoInfoCell.xib; sourceTree = "<group>"; };
+		47226F591A8262B700EF228C /* VideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoModel.h; sourceTree = "<group>"; };
+		47226F5A1A8262B700EF228C /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
+		4729E3511A85AAE10062799B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		473EBC131A88494500610BF7 /* FilterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterController.h; sourceTree = "<group>"; };
+		473EBC141A88494500610BF7 /* FilterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterController.m; sourceTree = "<group>"; };
+		473EBC151A88494500610BF7 /* FilterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterController.xib; sourceTree = "<group>"; };
+		4761BD141A88529800FCDDB5 /* FilterHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterHeaderCell.h; sourceTree = "<group>"; };
+		4761BD151A88529800FCDDB5 /* FilterHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterHeaderCell.m; sourceTree = "<group>"; };
+		4779975F1A845BB200DC7539 /* VideoListHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListHeader.h; sourceTree = "<group>"; };
+		477997601A845BB200DC7539 /* VideoListHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListHeader.m; sourceTree = "<group>"; };
+		477997611A845BB200DC7539 /* VideoListHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoListHeader.xib; sourceTree = "<group>"; };
+		47A933E41A8465B2000C7619 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		47A933E51A8465B2000C7619 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		47B4ED7B1A85B8DC00775993 /* VideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoController.h; sourceTree = "<group>"; };
+		47B4ED7C1A85B8DC00775993 /* VideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoController.m; sourceTree = "<group>"; };
+		47CB04FD1A825B7500AD075F /* erotube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = erotube.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		47CB05011A825B7500AD075F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47CB05021A825B7500AD075F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		47CB05041A825B7500AD075F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		47CB05051A825B7500AD075F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		47CB050D1A825B7500AD075F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		47CB05101A825B7500AD075F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		47CB05161A825B7500AD075F /* erotubeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = erotubeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		47CB051B1A825B7500AD075F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47CB051C1A825B7500AD075F /* erotubeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = erotubeTests.m; sourceTree = "<group>"; };
+		47D354811A83030E00E3139F /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		47D354821A83030E00E3139F /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		950883AA3DE4CFA13F7659F4 /* libPods-erotube.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-erotube.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7FE42014481A0D41F11F181 /* Pods-erotube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erotube.release.xcconfig"; path = "Pods/Target Support Files/Pods-erotube/Pods-erotube.release.xcconfig"; sourceTree = "<group>"; };
+		F51FD07CBD0919D9F6149006 /* Pods-erotube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erotube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-erotube/Pods-erotube.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		47CB04FA1A825B7500AD075F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4729E3521A85AAE10062799B /* MediaPlayer.framework in Frameworks */,
+				B02074564501F8B0FA6DE177 /* libPods-erotube.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47CB05131A825B7500AD075F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3631FAF097CEB81570FB9348 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F51FD07CBD0919D9F6149006 /* Pods-erotube.debug.xcconfig */,
+				B7FE42014481A0D41F11F181 /* Pods-erotube.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		47226F371A82605600EF228C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				47226F3A1A8260B300EF228C /* HomeController.h */,
+				47226F3B1A8260B300EF228C /* HomeController.m */,
+				47226F441A82615C00EF228C /* VideoDetailController.h */,
+				47226F451A82615C00EF228C /* VideoDetailController.m */,
+				47B4ED7B1A85B8DC00775993 /* VideoController.h */,
+				47B4ED7C1A85B8DC00775993 /* VideoController.m */,
+				473EBC131A88494500610BF7 /* FilterController.h */,
+				473EBC141A88494500610BF7 /* FilterController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		47226F381A82605E00EF228C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				47226F391A82609100EF228C /* NIB */,
+				47226F3F1A82612900EF228C /* VideoListCell.h */,
+				47226F401A82612900EF228C /* VideoListCell.m */,
+				47226F4E1A8261E500EF228C /* VideoInfoCell.h */,
+				47226F4F1A8261E500EF228C /* VideoInfoCell.m */,
+				4779975F1A845BB200DC7539 /* VideoListHeader.h */,
+				477997601A845BB200DC7539 /* VideoListHeader.m */,
+				4761BD141A88529800FCDDB5 /* FilterHeaderCell.h */,
+				4761BD151A88529800FCDDB5 /* FilterHeaderCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		47226F391A82609100EF228C /* NIB */ = {
+			isa = PBXGroup;
+			children = (
+				47226F3C1A8260B300EF228C /* HomeController.xib */,
+				47226F411A82612900EF228C /* VideoListCell.xib */,
+				477997611A845BB200DC7539 /* VideoListHeader.xib */,
+				47226F461A82615C00EF228C /* VideoDetailController.xib */,
+				47226F501A8261E500EF228C /* VideoInfoCell.xib */,
+				473EBC151A88494500610BF7 /* FilterController.xib */,
+			);
+			name = NIB;
+			sourceTree = "<group>";
+		};
+		47226F581A82627C00EF228C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				47226F591A8262B700EF228C /* VideoModel.h */,
+				47226F5A1A8262B700EF228C /* VideoModel.m */,
+				47D354811A83030E00E3139F /* DataManager.h */,
+				47D354821A83030E00E3139F /* DataManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		47CB04F41A825B7500AD075F = {
+			isa = PBXGroup;
+			children = (
+				47CB04FF1A825B7500AD075F /* erotube */,
+				47CB05191A825B7500AD075F /* erotubeTests */,
+				47CB04FE1A825B7500AD075F /* Products */,
+				3631FAF097CEB81570FB9348 /* Pods */,
+				55A815A6CB078540EED5FA1B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		47CB04FE1A825B7500AD075F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47CB04FD1A825B7500AD075F /* erotube.app */,
+				47CB05161A825B7500AD075F /* erotubeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		47CB04FF1A825B7500AD075F /* erotube */ = {
+			isa = PBXGroup;
+			children = (
+				47226F581A82627C00EF228C /* Model */,
+				47226F381A82605E00EF228C /* View */,
+				47226F371A82605600EF228C /* Controller */,
+				47EB0C381A83B48A0015133E /* Util */,
+				47CB05041A825B7500AD075F /* AppDelegate.h */,
+				47CB05051A825B7500AD075F /* AppDelegate.m */,
+				47CB050D1A825B7500AD075F /* Images.xcassets */,
+				47CB050F1A825B7500AD075F /* LaunchScreen.xib */,
+				47CB05001A825B7500AD075F /* Supporting Files */,
+			);
+			path = erotube;
+			sourceTree = "<group>";
+		};
+		47CB05001A825B7500AD075F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				47CB05011A825B7500AD075F /* Info.plist */,
+				47CB05021A825B7500AD075F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		47CB05191A825B7500AD075F /* erotubeTests */ = {
+			isa = PBXGroup;
+			children = (
+				47CB051C1A825B7500AD075F /* erotubeTests.m */,
+				47CB051A1A825B7500AD075F /* Supporting Files */,
+			);
+			path = erotubeTests;
+			sourceTree = "<group>";
+		};
+		47CB051A1A825B7500AD075F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				47CB051B1A825B7500AD075F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		47EB0C381A83B48A0015133E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				47A933E41A8465B2000C7619 /* Utils.h */,
+				47A933E51A8465B2000C7619 /* Utils.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		55A815A6CB078540EED5FA1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4729E3511A85AAE10062799B /* MediaPlayer.framework */,
+				950883AA3DE4CFA13F7659F4 /* libPods-erotube.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		47CB04FC1A825B7500AD075F /* erotube */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47CB05201A825B7500AD075F /* Build configuration list for PBXNativeTarget "erotube" */;
+			buildPhases = (
+				F6C1283180AD9A47896C5A89 /* Check Pods Manifest.lock */,
+				47CB04F91A825B7500AD075F /* Sources */,
+				47CB04FA1A825B7500AD075F /* Frameworks */,
+				47CB04FB1A825B7500AD075F /* Resources */,
+				4BB59C43BC17E4A8B1AC3CEF /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = erotube;
+			productName = erotube;
+			productReference = 47CB04FD1A825B7500AD075F /* erotube.app */;
+			productType = "com.apple.product-type.application";
+		};
+		47CB05151A825B7500AD075F /* erotubeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47CB05231A825B7500AD075F /* Build configuration list for PBXNativeTarget "erotubeTests" */;
+			buildPhases = (
+				47CB05121A825B7500AD075F /* Sources */,
+				47CB05131A825B7500AD075F /* Frameworks */,
+				47CB05141A825B7500AD075F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47CB05181A825B7500AD075F /* PBXTargetDependency */,
+			);
+			name = erotubeTests;
+			productName = erotubeTests;
+			productReference = 47CB05161A825B7500AD075F /* erotubeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		47CB04F51A825B7500AD075F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = stormluke;
+				TargetAttributes = {
+					47CB04FC1A825B7500AD075F = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = W3L3CWA8SK;
+					};
+					47CB05151A825B7500AD075F = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 47CB04FC1A825B7500AD075F;
+					};
+				};
+			};
+			buildConfigurationList = 47CB04F81A825B7500AD075F /* Build configuration list for PBXProject "erotube" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 47CB04F41A825B7500AD075F;
+			productRefGroup = 47CB04FE1A825B7500AD075F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				47CB04FC1A825B7500AD075F /* erotube */,
+				47CB05151A825B7500AD075F /* erotubeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		47CB04FB1A825B7500AD075F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				477997631A845BB200DC7539 /* VideoListHeader.xib in Resources */,
+				47226F481A82615C00EF228C /* VideoDetailController.xib in Resources */,
+				47CB05111A825B7500AD075F /* LaunchScreen.xib in Resources */,
+				47226F431A82612900EF228C /* VideoListCell.xib in Resources */,
+				47226F3E1A8260B300EF228C /* HomeController.xib in Resources */,
+				47226F521A8261E500EF228C /* VideoInfoCell.xib in Resources */,
+				47CB050E1A825B7500AD075F /* Images.xcassets in Resources */,
+				473EBC171A88494500610BF7 /* FilterController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47CB05141A825B7500AD075F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4BB59C43BC17E4A8B1AC3CEF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-erotube/Pods-erotube-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6C1283180AD9A47896C5A89 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		47CB04F91A825B7500AD075F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47CB05061A825B7500AD075F /* AppDelegate.m in Sources */,
+				47226F421A82612900EF228C /* VideoListCell.m in Sources */,
+				47A933E61A8465B2000C7619 /* Utils.m in Sources */,
+				47226F3D1A8260B300EF228C /* HomeController.m in Sources */,
+				47B4ED7D1A85B8DC00775993 /* VideoController.m in Sources */,
+				47226F511A8261E500EF228C /* VideoInfoCell.m in Sources */,
+				47226F5B1A8262B700EF228C /* VideoModel.m in Sources */,
+				4761BD161A88529800FCDDB5 /* FilterHeaderCell.m in Sources */,
+				473EBC161A88494500610BF7 /* FilterController.m in Sources */,
+				47CB05031A825B7500AD075F /* main.m in Sources */,
+				477997621A845BB200DC7539 /* VideoListHeader.m in Sources */,
+				47226F471A82615C00EF228C /* VideoDetailController.m in Sources */,
+				47D354831A83030E00E3139F /* DataManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47CB05121A825B7500AD075F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47CB051D1A825B7500AD075F /* erotubeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		47CB05181A825B7500AD075F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 47CB04FC1A825B7500AD075F /* erotube */;
+			targetProxy = 47CB05171A825B7500AD075F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		47CB050F1A825B7500AD075F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47CB05101A825B7500AD075F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		47CB051E1A825B7500AD075F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		47CB051F1A825B7500AD075F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		47CB05211A825B7500AD075F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F51FD07CBD0919D9F6149006 /* Pods-erotube.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = erotube/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		47CB05221A825B7500AD075F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7FE42014481A0D41F11F181 /* Pods-erotube.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = erotube/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		47CB05241A825B7500AD075F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = erotubeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/erotube.app/erotube";
+			};
+			name = Debug;
+		};
+		47CB05251A825B7500AD075F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = erotubeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/erotube.app/erotube";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		47CB04F81A825B7500AD075F /* Build configuration list for PBXProject "erotube" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47CB051E1A825B7500AD075F /* Debug */,
+				47CB051F1A825B7500AD075F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47CB05201A825B7500AD075F /* Build configuration list for PBXNativeTarget "erotube" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47CB05211A825B7500AD075F /* Debug */,
+				47CB05221A825B7500AD075F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47CB05231A825B7500AD075F /* Build configuration list for PBXNativeTarget "erotubeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47CB05241A825B7500AD075F /* Debug */,
+				47CB05251A825B7500AD075F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 47CB04F51A825B7500AD075F /* Project object */;
+}
