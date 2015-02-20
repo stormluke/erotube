@@ -10,6 +10,12 @@
 
 @implementation FilterHeaderCell
 
+- (instancetype)initWithStyle:(UITableViewCellStyle)style
+              reuseIdentifier:(NSString *)reuseIdentifier {
+  return [super initWithStyle:UITableViewCellStyleValue1
+              reuseIdentifier:reuseIdentifier];
+}
+
 - (void)awakeFromNib {
   // Initialization code
 }

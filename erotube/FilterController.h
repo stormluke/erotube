@@ -13,6 +13,4 @@
 @interface FilterController : UIViewController<SLExpandableTableViewDatasource,
                                                SLExpandableTableViewDelegate>
 
-@property(nonatomic, strong) IBOutlet SLExpandableTableView *tableView;
-
 @end

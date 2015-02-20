@@ -21,12 +21,12 @@
 
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  //  FilterController *c = [[FilterController alloc] init];
+  FilterController *c = [[FilterController alloc] init];
 
-  HomeController *homeController = [[HomeController alloc] init];
+  //  HomeController *homeController = [[HomeController alloc] init];
 
-  UINavigationController *navigationController = [[UINavigationController alloc]
-      initWithRootViewController:homeController];
+  UINavigationController *navigationController =
+      [[UINavigationController alloc] initWithRootViewController:c];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   self.window.rootViewController = navigationController;

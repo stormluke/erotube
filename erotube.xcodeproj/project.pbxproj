@@ -18,7 +18,6 @@
 		47226F5B1A8262B700EF228C /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 47226F5A1A8262B700EF228C /* VideoModel.m */; };
 		4729E3521A85AAE10062799B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4729E3511A85AAE10062799B /* MediaPlayer.framework */; };
 		473EBC161A88494500610BF7 /* FilterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473EBC141A88494500610BF7 /* FilterController.m */; };
-		473EBC171A88494500610BF7 /* FilterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 473EBC151A88494500610BF7 /* FilterController.xib */; };
 		4761BD161A88529800FCDDB5 /* FilterHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4761BD151A88529800FCDDB5 /* FilterHeaderCell.m */; };
 		477997621A845BB200DC7539 /* VideoListHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 477997601A845BB200DC7539 /* VideoListHeader.m */; };
 		477997631A845BB200DC7539 /* VideoListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 477997611A845BB200DC7539 /* VideoListHeader.xib */; };
@@ -61,7 +60,6 @@
 		4729E3511A85AAE10062799B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		473EBC131A88494500610BF7 /* FilterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterController.h; sourceTree = "<group>"; };
 		473EBC141A88494500610BF7 /* FilterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterController.m; sourceTree = "<group>"; };
-		473EBC151A88494500610BF7 /* FilterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterController.xib; sourceTree = "<group>"; };
 		4761BD141A88529800FCDDB5 /* FilterHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterHeaderCell.h; sourceTree = "<group>"; };
 		4761BD151A88529800FCDDB5 /* FilterHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterHeaderCell.m; sourceTree = "<group>"; };
 		4779975F1A845BB200DC7539 /* VideoListHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListHeader.h; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 				477997611A845BB200DC7539 /* VideoListHeader.xib */,
 				47226F461A82615C00EF228C /* VideoDetailController.xib */,
 				47226F501A8261E500EF228C /* VideoInfoCell.xib */,
-				473EBC151A88494500610BF7 /* FilterController.xib */,
 			);
 			name = NIB;
 			sourceTree = "<group>";
@@ -342,7 +339,6 @@
 				47226F3E1A8260B300EF228C /* HomeController.xib in Resources */,
 				47226F521A8261E500EF228C /* VideoInfoCell.xib in Resources */,
 				47CB050E1A825B7500AD075F /* Images.xcassets in Resources */,
-				473EBC171A88494500610BF7 /* FilterController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

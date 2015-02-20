@@ -9,7 +9,16 @@
 #import "FilterController.h"
 #import "FilterHeaderCell.h"
 
+#import "DataManager.h"
+
 @interface FilterController ()
+
+@property(nonatomic, strong) UITableView *tableView;
+
+@property(nonatomic, strong) DataManager *manager;
+@property(nonatomic, strong) NSArray *optionNames;
+@property(nonatomic, strong) NSMutableDictionary *options;
+@property(nonatomic, strong) NSMutableDictionary *selects;
 
 @end
 
@@ -28,10 +37,36 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [_tableView registerNib:[UINib nibWithNibName:@"VideoListCell" bundle:nil]
-      forCellReuseIdentifier:@"VideoListCell"];
+  [_tableView registerClass:[UITableViewCell class]
+      forCellReuseIdentifier:@"OptionCell"];
   [_tableView registerClass:[FilterHeaderCell class]
       forCellReuseIdentifier:@"FilterHeaderCell"];
+
+  _manager = [DataManager manager];
+  _optionNames = @[ @"Category", @"Mosaiced", @"Date", @"Sort", @"Duration" ];
+  _options = [NSMutableDictionary dictionaryWithDictionary:@{
+    @"Category" : [[NSMutableArray alloc] init],
+    @"Mosaiced" : @[ @"All", @"Yes", @"No" ],
+    @"Date" : @[ @"Today", @"Week", @"Month", @"Half a Year", @"Year" ],
+    @"Sort" : @[
+      @"Date",
+      @"Thumbs Up",
+      @"Votes Ratio",
+      @"Favourites",
+      @"Views",
+      @"Comment Counts"
+    ],
+    @"Duration" : @[ @"10 min", @"20 min", @"30 min", @"45 min", @"60 min" ]
+  }];
+  [_manager fetchCategoriesForce:NO].then(^{
+    for (NSString *category in _manager.categories) {
+      [_options[@"Category"]
+          addObject:[NSString stringWithFormat:@"%@ / %@", category,
+                                               _manager.categoryTranslations
+                                                   [category]]];
+    }
+    [_tableView reloadData];
+  });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,19 +75,24 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 2;
+  return _optionNames.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
     numberOfRowsInSection:(NSInteger)section {
-  return 3;
+  NSUInteger count = ((NSArray *)_options[_optionNames[section]]).count;
+  if (count != 0) count++;
+  return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  NSLog(@"Cell");
-  return [_tableView dequeueReusableCellWithIdentifier:@"VideoListCell"
-                                          forIndexPath:indexPath];
+  UITableViewCell *cell =
+      [_tableView dequeueReusableCellWithIdentifier:@"OptionCell"
+                                       forIndexPath:indexPath];
+  NSArray *options = _options[_optionNames[indexPath.section]];
+  cell.textLabel.text = options[indexPath.row - 1];
+  return cell;
 }
 
 - (BOOL)tableView:(SLExpandableTableView *)tableView
@@ -63,11 +103,18 @@
 - (UITableViewCell<UIExpandingTableViewCell> *)
                   tableView:(SLExpandableTableView *)tableView
     expandingCellForSection:(NSInteger)section {
-  NSLog(@"expanding %zd", section);
-  UITableViewCell<UIExpandingTableViewCell> *c =
+  NSString *optionName = _optionNames[section];
+
+  NSNumber *select = _selects[optionName];
+  if (!select) {
+    select = @(0);
+  }
+
+  UITableViewCell<UIExpandingTableViewCell> *cell =
       [_tableView dequeueReusableCellWithIdentifier:@"FilterHeaderCell"];
-  c.textLabel.text = @"OH";
-  return c;
+  cell.textLabel.text = optionName;
+  cell.detailTextLabel.text = _options[optionName][select.unsignedIntegerValue];
+  return cell;
 }
 
 - (BOOL)tableView:(SLExpandableTableView *)tableView
