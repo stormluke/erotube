@@ -12,6 +12,7 @@
 
 #import "DataManager.h"
 #import "Utils.h"
+#import "OptionModel.h"
 
 @interface AppDelegate ()
 
@@ -22,6 +23,8 @@
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   FilterController *c = [[FilterController alloc] init];
+  OptionModel *o = [[OptionModel alloc] init];
+  o.category = @"All";
 
   //  HomeController *homeController = [[HomeController alloc] init];
 

@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "OptionModel.h"
+
 #import <SLExpandableTableView/SLExpandableTableView.h>
 
 @interface FilterController : UIViewController<SLExpandableTableViewDatasource,
                                                SLExpandableTableViewDelegate>
+
+@property(nonatomic, strong) OptionModel *optionModel;
 
 @end

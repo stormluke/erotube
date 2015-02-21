@@ -22,6 +22,7 @@
 		477997621A845BB200DC7539 /* VideoListHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 477997601A845BB200DC7539 /* VideoListHeader.m */; };
 		477997631A845BB200DC7539 /* VideoListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 477997611A845BB200DC7539 /* VideoListHeader.xib */; };
 		47A933E61A8465B2000C7619 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A933E51A8465B2000C7619 /* Utils.m */; };
+		47AB6C361A9826A60055A459 /* OptionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 47AB6C351A9826A60055A459 /* OptionModel.m */; };
 		47B4ED7D1A85B8DC00775993 /* VideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4ED7C1A85B8DC00775993 /* VideoController.m */; };
 		47CB05031A825B7500AD075F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CB05021A825B7500AD075F /* main.m */; };
 		47CB05061A825B7500AD075F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CB05051A825B7500AD075F /* AppDelegate.m */; };
@@ -67,6 +68,8 @@
 		477997611A845BB200DC7539 /* VideoListHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoListHeader.xib; sourceTree = "<group>"; };
 		47A933E41A8465B2000C7619 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		47A933E51A8465B2000C7619 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		47AB6C341A9826A60055A459 /* OptionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionModel.h; sourceTree = "<group>"; };
+		47AB6C351A9826A60055A459 /* OptionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionModel.m; sourceTree = "<group>"; };
 		47B4ED7B1A85B8DC00775993 /* VideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoController.h; sourceTree = "<group>"; };
 		47B4ED7C1A85B8DC00775993 /* VideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoController.m; sourceTree = "<group>"; };
 		47CB04FD1A825B7500AD075F /* erotube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = erotube.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +168,8 @@
 				47226F5A1A8262B700EF228C /* VideoModel.m */,
 				47D354811A83030E00E3139F /* DataManager.h */,
 				47D354821A83030E00E3139F /* DataManager.m */,
+				47AB6C341A9826A60055A459 /* OptionModel.h */,
+				47AB6C351A9826A60055A459 /* OptionModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 				47226F3D1A8260B300EF228C /* HomeController.m in Sources */,
 				47B4ED7D1A85B8DC00775993 /* VideoController.m in Sources */,
 				47226F511A8261E500EF228C /* VideoInfoCell.m in Sources */,
+				47AB6C361A9826A60055A459 /* OptionModel.m in Sources */,
 				47226F5B1A8262B700EF228C /* VideoModel.m in Sources */,
 				4761BD161A88529800FCDDB5 /* FilterHeaderCell.m in Sources */,
 				473EBC161A88494500610BF7 /* FilterController.m in Sources */,

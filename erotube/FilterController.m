@@ -15,11 +15,6 @@
 
 @property(nonatomic, strong) UITableView *tableView;
 
-@property(nonatomic, strong) DataManager *manager;
-@property(nonatomic, strong) NSArray *optionNames;
-@property(nonatomic, strong) NSMutableDictionary *options;
-@property(nonatomic, strong) NSMutableDictionary *selects;
-
 @end
 
 @implementation FilterController
@@ -41,32 +36,6 @@
       forCellReuseIdentifier:@"OptionCell"];
   [_tableView registerClass:[FilterHeaderCell class]
       forCellReuseIdentifier:@"FilterHeaderCell"];
-
-  _manager = [DataManager manager];
-  _optionNames = @[ @"Category", @"Mosaiced", @"Date", @"Sort", @"Duration" ];
-  _options = [NSMutableDictionary dictionaryWithDictionary:@{
-    @"Category" : [[NSMutableArray alloc] init],
-    @"Mosaiced" : @[ @"All", @"Yes", @"No" ],
-    @"Date" : @[ @"Today", @"Week", @"Month", @"Half a Year", @"Year" ],
-    @"Sort" : @[
-      @"Date",
-      @"Thumbs Up",
-      @"Votes Ratio",
-      @"Favourites",
-      @"Views",
-      @"Comment Counts"
-    ],
-    @"Duration" : @[ @"10 min", @"20 min", @"30 min", @"45 min", @"60 min" ]
-  }];
-  [_manager fetchCategoriesForce:NO].then(^{
-    for (NSString *category in _manager.categories) {
-      [_options[@"Category"]
-          addObject:[NSString stringWithFormat:@"%@ / %@", category,
-                                               _manager.categoryTranslations
-                                                   [category]]];
-    }
-    [_tableView reloadData];
-  });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,12 +44,12 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return _optionNames.count;
+  return _optionModel.optionsCount;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
     numberOfRowsInSection:(NSInteger)section {
-  NSUInteger count = ((NSArray *)_options[_optionNames[section]]).count;
+  NSUInteger count = [_optionModel optionsForIndex:section].count;
   if (count != 0) count++;
   return count;
 }
@@ -90,7 +59,7 @@
   UITableViewCell *cell =
       [_tableView dequeueReusableCellWithIdentifier:@"OptionCell"
                                        forIndexPath:indexPath];
-  NSArray *options = _options[_optionNames[indexPath.section]];
+  NSArray *options = [_optionModel optionsForIndex:indexPath.section];
   cell.textLabel.text = options[indexPath.row - 1];
   return cell;
 }
@@ -103,17 +72,12 @@
 - (UITableViewCell<UIExpandingTableViewCell> *)
                   tableView:(SLExpandableTableView *)tableView
     expandingCellForSection:(NSInteger)section {
-  NSString *optionName = _optionNames[section];
-
-  NSNumber *select = _selects[optionName];
-  if (!select) {
-    select = @(0);
-  }
+  NSInteger select = [_optionModel selectsForIndex:section];
 
   UITableViewCell<UIExpandingTableViewCell> *cell =
       [_tableView dequeueReusableCellWithIdentifier:@"FilterHeaderCell"];
-  cell.textLabel.text = optionName;
-  cell.detailTextLabel.text = _options[optionName][select.unsignedIntegerValue];
+  cell.textLabel.text = _optionModel.optionTitles[section];
+  cell.detailTextLabel.text = [_optionModel optionsForIndex:section][select];
   return cell;
 }
 
@@ -124,6 +88,19 @@
 
 - (void)tableView:(SLExpandableTableView *)tableView
     downloadDataForExpandableSection:(NSInteger)section {
+}
+
+- (void)tableView:(UITableView *)tableView
+    didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [_optionModel setSelectsForIndex:indexPath.section select:indexPath.row - 1];
+  NSIndexPath *sectionIndex =
+      [NSIndexPath indexPathForRow:0 inSection:indexPath.section];
+  UITableViewCell<UIExpandingTableViewCell> *cell =
+      (UITableViewCell<UIExpandingTableViewCell> *)
+          [_tableView cellForRowAtIndexPath:sectionIndex];
+  cell.detailTextLabel.text =
+      [_optionModel optionsForIndex:indexPath.section][indexPath.row - 1];
+  [_tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end
