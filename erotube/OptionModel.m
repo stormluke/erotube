@@ -106,9 +106,14 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
 
 - (NSInteger)selectsForIndex:(NSInteger)index {
   switch (index) {
-    case 0:
-      return [_optionNames[@"Category"] indexOfObject:_category];
+    case 0: {
+      NSInteger select = [_optionNames[@"Category"] indexOfObject:_category];
+      if (select != NSNotFound) {
+        return select;
+      }
+      return 0;
       break;
+    }
     case 1:
       return _mosaiced;
       break;

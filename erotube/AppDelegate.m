@@ -22,18 +22,22 @@
 
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  FilterController *c = [[FilterController alloc] init];
-  OptionModel *o = [[OptionModel alloc] init];
-  o.category = @"All";
+  [[DataManager manager] fetchCategoriesForce:YES].then(^() {
+    FilterController *c = [[FilterController alloc] init];
+    OptionModel *o = [[OptionModel alloc] init];
+    o.category = @"All";
+    c.optionModel = o;
 
-  //  HomeController *homeController = [[HomeController alloc] init];
+    //  HomeController *homeController = [[HomeController alloc] init];
 
-  UINavigationController *navigationController =
-      [[UINavigationController alloc] initWithRootViewController:c];
+    UINavigationController *navigationController =
+        [[UINavigationController alloc] initWithRootViewController:c];
 
-  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  self.window.rootViewController = navigationController;
-  [self.window makeKeyAndVisible];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = navigationController;
+
+    [self.window makeKeyAndVisible];
+  });
 
   return YES;
 }
