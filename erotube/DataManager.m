@@ -53,6 +53,8 @@ static DataManager *_manager = nil;
           parameters:nil].thenInBackground(^(HTMLDocument *document) {
         NSMutableDictionary *counts = [[NSMutableDictionary alloc] init];
         NSMutableDictionary *hrefs = [[NSMutableDictionary alloc] init];
+        [hrefs setObject:[NSString stringWithFormat:@"%@/?", ET_URL_EROVIDEO]
+                  forKey:@"All"];
         [[[document firstNodeMatchingSelector:@"#sideCategories"]
             nodesMatchingSelector:@".item"]
             enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {

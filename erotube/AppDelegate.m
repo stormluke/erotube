@@ -37,6 +37,7 @@
     self.window.rootViewController = navigationController;
 
     [self.window makeKeyAndVisible];
+    NSLog(@"%@", [o constructURL]);
   });
 
   return YES;

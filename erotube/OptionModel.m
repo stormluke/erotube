@@ -46,6 +46,7 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
 
 @property(nonatomic, strong) DataManager *manager;
 @property(nonatomic, strong) NSMutableDictionary *optionNames;
+@property(nonatomic, strong) NSMutableDictionary *optionValues;
 
 @end
 
@@ -79,7 +80,7 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
         @"Date",
         @"Thumbs Up",
         @"Votes Ratio",
-        @"Favourites",
+        @"Favorites",
         @"Views",
         @"Comment Counts"
       ],
@@ -91,6 +92,19 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
         @"≤ 45 min",
         @"≤ 60 min"
       ]
+    }];
+    _optionValues = [[NSMutableDictionary alloc] initWithDictionary:@{
+      @"Mosaiced" : @[ @"", @"1", @"2" ],
+      @"Date" : @[ @"", @"today", @"week", @"month", @"halfyear", @"year" ],
+      @"Sort" : @[
+        @"",
+        @"votes",
+        @"votes_ratio",
+        @"favorites",
+        @"movie_view",
+        @"comment_count"
+      ],
+      @"Duration" : @[ @"", @"10", @"20", @"30", @"45", @"60" ]
     }];
   }
   return self;
@@ -155,7 +169,13 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
 }
 
 - (NSString *)constructURL {
-  return nil;
+  return [NSString
+      stringWithFormat:@"%@&mosaiced=%@&age=%@&sort=%@&minimumLength=%@",
+                       _manager.categoryHrefs[_category],
+                       _optionValues[@"Mosaiced"][_mosaiced],
+                       _optionValues[@"Date"][_date],
+                       _optionValues[@"Sort"][_sort],
+                       _optionValues[@"Duration"][_duration]];
 }
 
 @end
