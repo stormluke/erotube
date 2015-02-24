@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "VideoModel.h"
+#import "OptionModel.h"
 
 #import <PromiseKit/PromiseKit.h>
 
@@ -24,6 +25,7 @@
 - (PMKPromise *)fetchCategoriesForce:(BOOL)force;
 - (PMKPromise *)fetchVideoListByCategory:(NSString *)category
                                     page:(NSInteger)page
+                                 options:(OptionModel *)optionModel
                                    force:(BOOL)force;
 - (PMKPromise *)fetchVideoInfo:(VideoModel *)videoModel force:(BOOL)force;
 

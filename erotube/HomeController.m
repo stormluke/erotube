@@ -95,6 +95,7 @@ const NSInteger VIDEOS_PER_CATEGORY = 3;
         for (NSString *category in categoriesNeedShow) {
           [works addObject:[_manager fetchVideoListByCategory:category
                                                          page:1
+                                                      options:nil
                                                         force:force].then(^{
             [_videoTableView reloadData];
           })];

@@ -101,6 +101,7 @@ static DataManager *_manager = nil;
 
 - (PMKPromise *)fetchVideoListByCategory:(NSString *)category
                                     page:(NSInteger)page
+                                 options:(OptionModel *)optionModel
                                    force:(BOOL)force {
   if (_allVideos == nil) {
     _allVideos = [[NSMutableDictionary alloc] init];
@@ -116,9 +117,10 @@ static DataManager *_manager = nil;
       if (!force && [videosByCategory objectForKey:@(page)]) {
         return fulfill(PMKManifold(videosByCategory, _allVideos));
       }
-      NSString *href = [category isEqualToString:@"All"]
-                           ? @"http://ero-video.net"
-                           : _categoryHrefs[category];
+      NSString *href = _categoryHrefs[category];
+      if (optionModel) {
+        href = [href stringByAppendingString:[optionModel buildParams]];
+      }
       [self GET:href
           parameters:nil].thenInBackground(^(HTMLDocument *document) {
         NSMutableArray *videos = [[NSMutableArray alloc] init];

@@ -168,10 +168,9 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
   }
 }
 
-- (NSString *)constructURL {
+- (NSString *)buildParams {
   return [NSString
-      stringWithFormat:@"%@&mosaiced=%@&age=%@&sort=%@&minimumLength=%@",
-                       _manager.categoryHrefs[_category],
+      stringWithFormat:@"&mosaiced=%@&age=%@&sort=%@&minimumLength=%@",
                        _optionValues[@"Mosaiced"][_mosaiced],
                        _optionValues[@"Date"][_date],
                        _optionValues[@"Sort"][_sort],

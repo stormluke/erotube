@@ -21,6 +21,6 @@
 - (NSArray *)optionsForIndex:(NSInteger)index;
 - (NSInteger)selectsForIndex:(NSInteger)index;
 - (void)setSelectsForIndex:(NSInteger)index select:(NSInteger)select;
-- (NSString *)constructURL;
+- (NSString *)buildParams;
 
 @end

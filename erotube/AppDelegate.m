@@ -24,14 +24,14 @@
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   [[DataManager manager] fetchCategoriesForce:YES].then(^() {
-    //    FilterController *c = [[FilterController alloc] init];
-    //    OptionModel *o = [[OptionModel alloc] init];
-    //    o.category = @"All";
-    //    c.optionModel = o;
+    FilterController *c = [[FilterController alloc] init];
+    OptionModel *o = [[OptionModel alloc] init];
+    o.category = @"All";
+    c.optionModel = o;
 
     //  HomeController *homeController = [[HomeController alloc] init];
 
-    CategoryController *c = [[CategoryController alloc] init];
+    //    CategoryController *c = [[CategoryController alloc] init];
 
     UINavigationController *navigationController =
         [[UINavigationController alloc] initWithRootViewController:c];
@@ -40,6 +40,7 @@
     self.window.rootViewController = navigationController;
 
     [self.window makeKeyAndVisible];
+    NSLog(@"%@", [o buildParams]);
   });
 
   return YES;

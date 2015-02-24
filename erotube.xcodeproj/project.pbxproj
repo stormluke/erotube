@@ -32,6 +32,8 @@
 		47CB05111A825B7500AD075F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47CB050F1A825B7500AD075F /* LaunchScreen.xib */; };
 		47CB051D1A825B7500AD075F /* erotubeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CB051C1A825B7500AD075F /* erotubeTests.m */; };
 		47D354831A83030E00E3139F /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D354821A83030E00E3139F /* DataManager.m */; };
+		47E7CA301A9C0A4C00B534E2 /* VideoListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E7CA2E1A9C0A4C00B534E2 /* VideoListController.m */; };
+		47E7CA311A9C0A4C00B534E2 /* VideoListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E7CA2F1A9C0A4C00B534E2 /* VideoListController.xib */; };
 		B02074564501F8B0FA6DE177 /* libPods-erotube.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 950883AA3DE4CFA13F7659F4 /* libPods-erotube.a */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +91,9 @@
 		47CB051C1A825B7500AD075F /* erotubeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = erotubeTests.m; sourceTree = "<group>"; };
 		47D354811A83030E00E3139F /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		47D354821A83030E00E3139F /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		47E7CA2D1A9C0A4C00B534E2 /* VideoListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListController.h; sourceTree = "<group>"; };
+		47E7CA2E1A9C0A4C00B534E2 /* VideoListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListController.m; sourceTree = "<group>"; };
+		47E7CA2F1A9C0A4C00B534E2 /* VideoListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoListController.xib; sourceTree = "<group>"; };
 		950883AA3DE4CFA13F7659F4 /* libPods-erotube.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-erotube.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7FE42014481A0D41F11F181 /* Pods-erotube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erotube.release.xcconfig"; path = "Pods/Target Support Files/Pods-erotube/Pods-erotube.release.xcconfig"; sourceTree = "<group>"; };
 		F51FD07CBD0919D9F6149006 /* Pods-erotube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erotube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-erotube/Pods-erotube.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +141,8 @@
 				473EBC141A88494500610BF7 /* FilterController.m */,
 				47985D451A9ABF4500E71A1A /* CategoryController.h */,
 				47985D461A9ABF4500E71A1A /* CategoryController.m */,
+				47E7CA2D1A9C0A4C00B534E2 /* VideoListController.h */,
+				47E7CA2E1A9C0A4C00B534E2 /* VideoListController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -165,6 +172,7 @@
 				47226F461A82615C00EF228C /* VideoDetailController.xib */,
 				47226F501A8261E500EF228C /* VideoInfoCell.xib */,
 				47985D471A9ABF4500E71A1A /* CategoryController.xib */,
+				47E7CA2F1A9C0A4C00B534E2 /* VideoListController.xib */,
 			);
 			name = NIB;
 			sourceTree = "<group>";
@@ -349,6 +357,7 @@
 				47985D491A9ABF4500E71A1A /* CategoryController.xib in Resources */,
 				47226F481A82615C00EF228C /* VideoDetailController.xib in Resources */,
 				47CB05111A825B7500AD075F /* LaunchScreen.xib in Resources */,
+				47E7CA311A9C0A4C00B534E2 /* VideoListController.xib in Resources */,
 				47226F431A82612900EF228C /* VideoListCell.xib in Resources */,
 				47226F3E1A8260B300EF228C /* HomeController.xib in Resources */,
 				47226F521A8261E500EF228C /* VideoInfoCell.xib in Resources */,
@@ -410,6 +419,7 @@
 				47B4ED7D1A85B8DC00775993 /* VideoController.m in Sources */,
 				47226F511A8261E500EF228C /* VideoInfoCell.m in Sources */,
 				47AB6C361A9826A60055A459 /* OptionModel.m in Sources */,
+				47E7CA301A9C0A4C00B534E2 /* VideoListController.m in Sources */,
 				47226F5B1A8262B700EF228C /* VideoModel.m in Sources */,
 				4761BD161A88529800FCDDB5 /* FilterHeaderCell.m in Sources */,
 				473EBC161A88494500610BF7 /* FilterController.m in Sources */,
