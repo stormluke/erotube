@@ -119,7 +119,8 @@ static DataManager *_manager = nil;
       }
       NSString *href = _categoryHrefs[category];
       if (optionModel) {
-        href = [href stringByAppendingString:[optionModel buildParams]];
+        href = [href stringByAppendingFormat:@"&page=%zd%@", page,
+                                             [optionModel buildParams]];
       }
       [self GET:href
           parameters:nil].thenInBackground(^(HTMLDocument *document) {

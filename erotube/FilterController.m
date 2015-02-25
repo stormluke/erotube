@@ -13,21 +13,12 @@
 
 @interface FilterController ()
 
-@property(nonatomic, strong) UITableView *tableView;
-
 @end
 
 @implementation FilterController
 
-- (void)loadView {
-  _tableView =
-      [[SLExpandableTableView alloc] initWithFrame:[UIScreen mainScreen].bounds
-                                             style:UITableViewStylePlain];
-  _tableView.dataSource = self;
-  _tableView.delegate = self;
-  _tableView.autoresizingMask =
-      UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-  self.view = _tableView;
+- (NSString *)title {
+  return @"Filter";
 }
 
 - (void)viewDidLoad {
@@ -101,6 +92,7 @@
   cell.detailTextLabel.text =
       [_optionModel optionsForIndex:indexPath.section][indexPath.row - 1];
   [_tableView deselectRowAtIndexPath:indexPath animated:YES];
+  if (_didChangeOption) _didChangeOption(_optionModel);
 }
 
 @end

@@ -8,6 +8,7 @@ target 'erotube' do
   pod 'SVPullToRefresh'
   pod 'PromiseKit'
   pod 'SLExpandableTableView'
+  pod 'MMDrawerController'
 end
 
 target 'erotubeTests' do

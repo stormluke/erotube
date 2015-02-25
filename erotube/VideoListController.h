@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 
 #import "OptionModel.h"
+#import "FilterController.h"
 
 @interface VideoListController
     : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property(nonatomic, strong) IBOutlet UITableView *tableView;
 @property(nonatomic, strong) OptionModel *optionModel;
+@property(nonatomic, strong) FilterController *filterController;
 
 @end

@@ -55,8 +55,9 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
 - (instancetype)init {
   self = [super init];
   if (self) {
+    _category = @"All";
     _optionTitles =
-        @[ @"Category", @"Mosaiced", @"Date", @"Sort", @"Duration" ];
+        @[ @"Category", @"Mosaiced", @"Date", @"Sort By", @"Duration" ];
     _manager = [DataManager manager];
     NSMutableArray *categoryNames = [[NSMutableArray alloc] init];
     for (NSString *category in _manager.categories) {
@@ -76,7 +77,7 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
         @"≤ Half a Year",
         @"≤ a Year"
       ],
-      @"Sort" : @[
+      @"Sort By" : @[
         @"Date",
         @"Thumbs Up",
         @"Votes Ratio",
@@ -86,17 +87,17 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
       ],
       @"Duration" : @[
         @"All",
-        @"≤ 10 min",
-        @"≤ 20 min",
-        @"≤ 30 min",
-        @"≤ 45 min",
-        @"≤ 60 min"
+        @"≈ 10 min",
+        @"≈ 20 min",
+        @"≈ 30 min",
+        @"≈ 45 min",
+        @"≈ 60 min"
       ]
     }];
     _optionValues = [[NSMutableDictionary alloc] initWithDictionary:@{
       @"Mosaiced" : @[ @"", @"1", @"2" ],
       @"Date" : @[ @"", @"today", @"week", @"month", @"halfyear", @"year" ],
-      @"Sort" : @[
+      @"Sort By" : @[
         @"",
         @"votes",
         @"votes_ratio",
@@ -149,7 +150,7 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
 - (void)setSelectsForIndex:(NSInteger)index select:(NSInteger)select {
   switch (index) {
     case 0:
-      _category = [_optionNames[@"Category"] objectAtIndex:select];
+      _category = [_manager.categories objectAtIndex:select];
       break;
     case 1:
       _mosaiced = select;
@@ -173,8 +174,15 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
       stringWithFormat:@"&mosaiced=%@&age=%@&sort=%@&minimumLength=%@",
                        _optionValues[@"Mosaiced"][_mosaiced],
                        _optionValues[@"Date"][_date],
-                       _optionValues[@"Sort"][_sort],
+                       _optionValues[@"Sort By"][_sort],
                        _optionValues[@"Duration"][_duration]];
+}
+
+- (NSString *)description {
+  return
+      [NSString stringWithFormat:@"category = %@, mosaiced = %zd, date = %zd, "
+                                 @"sort = %zd, duration = %zd",
+                                 _category, _mosaiced, _date, _sort, _duration];
 }
 
 @end

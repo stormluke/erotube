@@ -19,6 +19,7 @@
 		4729E3521A85AAE10062799B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4729E3511A85AAE10062799B /* MediaPlayer.framework */; };
 		473EBC161A88494500610BF7 /* FilterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473EBC141A88494500610BF7 /* FilterController.m */; };
 		4761BD161A88529800FCDDB5 /* FilterHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4761BD151A88529800FCDDB5 /* FilterHeaderCell.m */; };
+		476BDD761A9DF91000BFDF90 /* FilterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 476BDD751A9DF91000BFDF90 /* FilterController.xib */; };
 		477997621A845BB200DC7539 /* VideoListHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 477997601A845BB200DC7539 /* VideoListHeader.m */; };
 		477997631A845BB200DC7539 /* VideoListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 477997611A845BB200DC7539 /* VideoListHeader.xib */; };
 		47985D481A9ABF4500E71A1A /* CategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47985D461A9ABF4500E71A1A /* CategoryController.m */; };
@@ -67,6 +68,7 @@
 		473EBC141A88494500610BF7 /* FilterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterController.m; sourceTree = "<group>"; };
 		4761BD141A88529800FCDDB5 /* FilterHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterHeaderCell.h; sourceTree = "<group>"; };
 		4761BD151A88529800FCDDB5 /* FilterHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterHeaderCell.m; sourceTree = "<group>"; };
+		476BDD751A9DF91000BFDF90 /* FilterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterController.xib; sourceTree = "<group>"; };
 		4779975F1A845BB200DC7539 /* VideoListHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListHeader.h; sourceTree = "<group>"; };
 		477997601A845BB200DC7539 /* VideoListHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListHeader.m; sourceTree = "<group>"; };
 		477997611A845BB200DC7539 /* VideoListHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoListHeader.xib; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				477997611A845BB200DC7539 /* VideoListHeader.xib */,
 				47226F461A82615C00EF228C /* VideoDetailController.xib */,
 				47226F501A8261E500EF228C /* VideoInfoCell.xib */,
+				476BDD751A9DF91000BFDF90 /* FilterController.xib */,
 				47985D471A9ABF4500E71A1A /* CategoryController.xib */,
 				47E7CA2F1A9C0A4C00B534E2 /* VideoListController.xib */,
 			);
@@ -358,6 +361,7 @@
 				47226F481A82615C00EF228C /* VideoDetailController.xib in Resources */,
 				47CB05111A825B7500AD075F /* LaunchScreen.xib in Resources */,
 				47E7CA311A9C0A4C00B534E2 /* VideoListController.xib in Resources */,
+				476BDD761A9DF91000BFDF90 /* FilterController.xib in Resources */,
 				47226F431A82612900EF228C /* VideoListCell.xib in Resources */,
 				47226F3E1A8260B300EF228C /* HomeController.xib in Resources */,
 				47226F521A8261E500EF228C /* VideoInfoCell.xib in Resources */,

@@ -15,6 +15,10 @@
 @interface FilterController : UIViewController<SLExpandableTableViewDatasource,
                                                SLExpandableTableViewDelegate>
 
+@property(nonatomic, strong) IBOutlet UITableView *tableView;
+
 @property(nonatomic, strong) OptionModel *optionModel;
+
+@property(nonatomic, strong) void (^didChangeOption)(OptionModel *optionModel);
 
 @end
