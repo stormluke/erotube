@@ -13,15 +13,18 @@
 #import <AFNetworking/AFNetworking.h>
 #import <HTMLReader/HTMLReader.h>
 
+NSInteger const ET_VIDEO_PER_PAGE = 52;
+NSString *const ET_CATEGORY_ALL = @"All";
+
+static NSString *const ETURLEroVideo = @"http://ero-video.net";
+
+static DataManager *_manager = nil;
+
 @interface DataManager ()
 
 @property(nonatomic, strong) AFHTTPRequestOperationManager *requestManager;
 
 @end
-
-static NSString *ET_URL_EROVIDEO = @"http://209.54.49.203";
-
-static DataManager *_manager = nil;
 
 @implementation DataManager
 
@@ -48,13 +51,13 @@ static DataManager *_manager = nil;
             PMKManifold(_categories, _categoryCounts, _categoryHrefs));
       }
       NSMutableArray *categories = [[NSMutableArray alloc] init];
-      [categories addObject:@"All"];
-      [self GET:ET_URL_EROVIDEO
+      [categories addObject:ET_CATEGORY_ALL];
+      [self GET:ETURLEroVideo
           parameters:nil].thenInBackground(^(HTMLDocument *document) {
         NSMutableDictionary *counts = [[NSMutableDictionary alloc] init];
         NSMutableDictionary *hrefs = [[NSMutableDictionary alloc] init];
-        [hrefs setObject:[NSString stringWithFormat:@"%@/?", ET_URL_EROVIDEO]
-                  forKey:@"All"];
+        [hrefs setObject:[NSString stringWithFormat:@"%@/?", ETURLEroVideo]
+                  forKey:ET_CATEGORY_ALL];
         [[[document firstNodeMatchingSelector:@"#sideCategories"]
             nodesMatchingSelector:@".item"]
             enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -74,11 +77,11 @@ static DataManager *_manager = nil;
             }];
         [_manager.requestManager.requestSerializer setValue:@"ja-jp"
                                          forHTTPHeaderField:@"Accept-Language"];
-        [self GET:ET_URL_EROVIDEO
+        [self GET:ETURLEroVideo
             parameters:nil].thenInBackground(^(HTMLDocument *document) {
           NSMutableDictionary *categoryTranslations =
               [[NSMutableDictionary alloc] init];
-          categoryTranslations[@"All"] = @"全部";
+          categoryTranslations[ET_CATEGORY_ALL] = @"全部";
           [[[document firstNodeMatchingSelector:@"#sideCategories"]
               nodesMatchingSelector:@".item"]
               enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {

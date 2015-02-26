@@ -88,7 +88,7 @@ typedef NS_ENUM(NSInteger, ETVideoListControllerState) {
     _hasMore = YES;
   }
   if (_hasMore) {
-    NSInteger page = _length / 52 + 1;
+    NSInteger page = _length / ET_VIDEO_PER_PAGE + 1;
     [_manager fetchVideoListByCategory:_optionModel.category
                                   page:page
                                options:_optionModel
@@ -96,7 +96,7 @@ typedef NS_ENUM(NSInteger, ETVideoListControllerState) {
         .then(^(NSDictionary *videoByCategory, NSDictionary *allVideos) {
           NSArray *videos = videoByCategory[@(page)];
           _length += videos.count;
-          if (videos.count < 52) {
+          if (videos.count < ET_VIDEO_PER_PAGE) {
             _hasMore = NO;
           }
           self.title = _optionModel.category;
@@ -138,8 +138,8 @@ typedef NS_ENUM(NSInteger, ETVideoListControllerState) {
       willDisplayCell:(UITableViewCell *)cell
     forRowAtIndexPath:(NSIndexPath *)indexPath {
   VideoListCell *videoListCell = (VideoListCell *)cell;
-  NSInteger page = indexPath.row / 52 + 1;
-  NSInteger offset = indexPath.row % 52;
+  NSInteger page = indexPath.row / ET_VIDEO_PER_PAGE + 1;
+  NSInteger offset = indexPath.row % ET_VIDEO_PER_PAGE;
   VideoModel *videoModel =
       _manager.allVideos[_optionModel.category][@(page)][offset];
   [videoListCell setupWithVideoModel:videoModel];
@@ -147,8 +147,8 @@ typedef NS_ENUM(NSInteger, ETVideoListControllerState) {
 
 - (void)tableView:(UITableView *)tableView
     didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  NSInteger page = indexPath.row / 52 + 1;
-  NSInteger offset = indexPath.row % 52;
+  NSInteger page = indexPath.row / ET_VIDEO_PER_PAGE + 1;
+  NSInteger offset = indexPath.row % ET_VIDEO_PER_PAGE;
   VideoModel *videoModel =
       _manager.allVideos[_optionModel.category][@(page)][offset];
   VideoDetailController *videoDetailController =

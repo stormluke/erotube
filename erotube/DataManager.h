@@ -13,6 +13,9 @@
 
 #import <PromiseKit/PromiseKit.h>
 
+extern NSInteger const ET_VIDEO_PER_PAGE;
+extern NSString *const ET_CATEGORY_ALL;
+
 @interface DataManager : NSObject
 
 @property(nonatomic, strong) NSMutableArray *categories;
