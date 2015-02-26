@@ -9,37 +9,18 @@
 #import "OptionModel.h"
 #import "DataManager.h"
 
-typedef NS_ENUM(NSInteger, ET_OPTION_MOSAICED) {
-  ET_OPTION_MOSAICED_ALL,
-  ET_OPTION_MOSAICED_YES,
-  ET_OPTION_MOSAICED_NO
-};
+NSString *const ET_OPTIONS_CATEGORY = @"Category";
+NSString *const ET_OPTIONS_MOSAICED = @"Mosaiced";
+NSString *const ET_OPTIONS_DATE = @"Date";
+NSString *const ET_OPTIONS_SORT = @"Sort By";
+NSString *const ET_OPTIONS_DURATION = @"Duration";
 
-typedef NS_ENUM(NSInteger, ET_OPTION_DATE) {
-  ET_OPTION_DATE_ALL,
-  ET_OPTION_DATE_TODAY,
-  ET_OPTION_DATE_WEEK,
-  ET_OPTION_DATE_MONTH,
-  ET_OPTION_DATE_HALFYEAR,
-  ET_OPTION_DATE_YEAR
-};
-
-typedef NS_ENUM(NSInteger, ET_OPTION_SORT) {
-  ET_OPTION_SORT_DATE,
-  ET_OPTION_SORT_THUMBSUP,
-  ET_OPTION_SORT_VOTESRATIO,
-  ET_OPTION_SORT_FAVOURITES,
-  ET_OPTION_SORT_VIEWS,
-  ET_OPTION_SORT_COMMENTCOUNTS
-};
-
-typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
-  ET_OPTION_DURATION_ALL,
-  ET_OPTION_DURATION_10,
-  ET_OPTION_DURATION_20,
-  ET_OPTION_DURATION_30,
-  ET_OPTION_DURATION_45,
-  ET_OPTION_DURATION_60
+typedef NS_ENUM(NSInteger, ETOptionsIndex) {
+  ETOptionsIndexCategory,
+  ETOptionsIndexMosaiced,
+  ETOptionsIndexDate,
+  ETOptionsIndexSort,
+  ETOptionsIndexDuration
 };
 
 @interface OptionModel ()
@@ -56,8 +37,13 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
   self = [super init];
   if (self) {
     _category = @"All";
-    _optionTitles =
-        @[ @"Category", @"Mosaiced", @"Date", @"Sort By", @"Duration" ];
+    _optionTitles = @[
+      ET_OPTIONS_CATEGORY,
+      ET_OPTIONS_MOSAICED,
+      ET_OPTIONS_DATE,
+      ET_OPTIONS_SORT,
+      ET_OPTIONS_DURATION
+    ];
     _manager = [DataManager manager];
     NSMutableArray *categoryNames = [[NSMutableArray alloc] init];
     for (NSString *category in _manager.categories) {
@@ -67,9 +53,9 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
                                                    [category]]];
     }
     _optionNames = [[NSMutableDictionary alloc] initWithDictionary:@{
-      @"Category" : categoryNames,
-      @"Mosaiced" : @[ @"All", @"Yes", @"No" ],
-      @"Date" : @[
+      ET_OPTIONS_CATEGORY : categoryNames,
+      ET_OPTIONS_MOSAICED : @[ @"All", @"Yes", @"No" ],
+      ET_OPTIONS_DATE : @[
         @"All",
         @"Today",
         @"≤ a Week",
@@ -77,7 +63,7 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
         @"≤ Half a Year",
         @"≤ a Year"
       ],
-      @"Sort By" : @[
+      ET_OPTIONS_SORT : @[
         @"Date",
         @"Thumbs Up",
         @"Votes Ratio",
@@ -85,19 +71,20 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
         @"Views",
         @"Comment Counts"
       ],
-      @"Duration" : @[
+      ET_OPTIONS_DURATION : @[
         @"All",
-        @"≈ 10 min",
-        @"≈ 20 min",
-        @"≈ 30 min",
-        @"≈ 45 min",
-        @"≈ 60 min"
+        @"≥ 10 min",
+        @"≥ 20 min",
+        @"≥ 30 min",
+        @"≥ 45 min",
+        @"≥ 60 min"
       ]
     }];
     _optionValues = [[NSMutableDictionary alloc] initWithDictionary:@{
-      @"Mosaiced" : @[ @"", @"1", @"2" ],
-      @"Date" : @[ @"", @"today", @"week", @"month", @"halfyear", @"year" ],
-      @"Sort By" : @[
+      ET_OPTIONS_MOSAICED : @[ @"", @"1", @"2" ],
+      ET_OPTIONS_DATE :
+          @[ @"", @"today", @"week", @"month", @"halfyear", @"year" ],
+      ET_OPTIONS_DATE : @[
         @"",
         @"votes",
         @"votes_ratio",
@@ -105,7 +92,7 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
         @"movie_view",
         @"comment_count"
       ],
-      @"Duration" : @[ @"", @"10", @"20", @"30", @"45", @"60" ]
+      ET_OPTIONS_DURATION : @[ @"", @"10", @"20", @"30", @"45", @"60" ]
     }];
   }
   return self;
@@ -121,24 +108,25 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
 
 - (NSInteger)selectsForIndex:(NSInteger)index {
   switch (index) {
-    case 0: {
-      NSInteger select = [_optionNames[@"Category"] indexOfObject:_category];
+    case ETOptionsIndexCategory: {
+      NSInteger select =
+          [_optionNames[ET_OPTIONS_CATEGORY] indexOfObject:_category];
       if (select != NSNotFound) {
         return select;
       }
       return 0;
       break;
     }
-    case 1:
+    case ETOptionsIndexMosaiced:
       return _mosaiced;
       break;
-    case 2:
+    case ETOptionsIndexDate:
       return _date;
       break;
-    case 3:
+    case ETOptionsIndexSort:
       return _sort;
       break;
-    case 4:
+    case ETOptionsIndexDuration:
       return _duration;
       break;
     default:
@@ -149,19 +137,19 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
 
 - (void)setSelectsForIndex:(NSInteger)index select:(NSInteger)select {
   switch (index) {
-    case 0:
+    case ETOptionsIndexCategory:
       _category = [_manager.categories objectAtIndex:select];
       break;
-    case 1:
+    case ETOptionsIndexMosaiced:
       _mosaiced = select;
       break;
-    case 2:
+    case ETOptionsIndexDate:
       _date = select;
       break;
-    case 3:
+    case ETOptionsIndexSort:
       _sort = select;
       break;
-    case 4:
+    case ETOptionsIndexDuration:
       _duration = select;
       break;
     default:
@@ -172,10 +160,10 @@ typedef NS_ENUM(NSInteger, ET_OPTION_DURATION) {
 - (NSString *)buildParams {
   return [NSString
       stringWithFormat:@"&mosaiced=%@&age=%@&sort=%@&minimumLength=%@",
-                       _optionValues[@"Mosaiced"][_mosaiced],
-                       _optionValues[@"Date"][_date],
-                       _optionValues[@"Sort By"][_sort],
-                       _optionValues[@"Duration"][_duration]];
+                       _optionValues[ET_OPTIONS_MOSAICED][_mosaiced],
+                       _optionValues[ET_OPTIONS_DATE][_date],
+                       _optionValues[ET_OPTIONS_SORT][_sort],
+                       _optionValues[ET_OPTIONS_DURATION][_duration]];
 }
 
 - (NSString *)description {
