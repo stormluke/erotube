@@ -12,6 +12,5 @@
     : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic, strong) IBOutlet UITableView *videoTableView;
-@property(nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end

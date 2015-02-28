@@ -17,6 +17,8 @@
 		47226F521A8261E500EF228C /* VideoInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47226F501A8261E500EF228C /* VideoInfoCell.xib */; };
 		47226F5B1A8262B700EF228C /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 47226F5A1A8262B700EF228C /* VideoModel.m */; };
 		4729E3521A85AAE10062799B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4729E3511A85AAE10062799B /* MediaPlayer.framework */; };
+		4739B5D61AA217610088EB84 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4739B5D41AA217610088EB84 /* MainController.m */; };
+		4739B5D71AA217610088EB84 /* MainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4739B5D51AA217610088EB84 /* MainController.xib */; };
 		473EBC161A88494500610BF7 /* FilterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473EBC141A88494500610BF7 /* FilterController.m */; };
 		4761BD161A88529800FCDDB5 /* FilterHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4761BD151A88529800FCDDB5 /* FilterHeaderCell.m */; };
 		476BDD761A9DF91000BFDF90 /* FilterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 476BDD751A9DF91000BFDF90 /* FilterController.xib */; };
@@ -64,6 +66,9 @@
 		47226F591A8262B700EF228C /* VideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoModel.h; sourceTree = "<group>"; };
 		47226F5A1A8262B700EF228C /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
 		4729E3511A85AAE10062799B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		4739B5D31AA217610088EB84 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		4739B5D41AA217610088EB84 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		4739B5D51AA217610088EB84 /* MainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainController.xib; sourceTree = "<group>"; };
 		473EBC131A88494500610BF7 /* FilterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterController.h; sourceTree = "<group>"; };
 		473EBC141A88494500610BF7 /* FilterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterController.m; sourceTree = "<group>"; };
 		4761BD141A88529800FCDDB5 /* FilterHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterHeaderCell.h; sourceTree = "<group>"; };
@@ -161,6 +166,8 @@
 				477997601A845BB200DC7539 /* VideoListHeader.m */,
 				4761BD141A88529800FCDDB5 /* FilterHeaderCell.h */,
 				4761BD151A88529800FCDDB5 /* FilterHeaderCell.m */,
+				4739B5D31AA217610088EB84 /* MainController.h */,
+				4739B5D41AA217610088EB84 /* MainController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -176,6 +183,7 @@
 				476BDD751A9DF91000BFDF90 /* FilterController.xib */,
 				47985D471A9ABF4500E71A1A /* CategoryController.xib */,
 				47E7CA2F1A9C0A4C00B534E2 /* VideoListController.xib */,
+				4739B5D51AA217610088EB84 /* MainController.xib */,
 			);
 			name = NIB;
 			sourceTree = "<group>";
@@ -366,6 +374,7 @@
 				47226F3E1A8260B300EF228C /* HomeController.xib in Resources */,
 				47226F521A8261E500EF228C /* VideoInfoCell.xib in Resources */,
 				47CB050E1A825B7500AD075F /* Images.xcassets in Resources */,
+				4739B5D71AA217610088EB84 /* MainController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +431,7 @@
 				47226F3D1A8260B300EF228C /* HomeController.m in Sources */,
 				47B4ED7D1A85B8DC00775993 /* VideoController.m in Sources */,
 				47226F511A8261E500EF228C /* VideoInfoCell.m in Sources */,
+				4739B5D61AA217610088EB84 /* MainController.m in Sources */,
 				47AB6C361A9826A60055A459 /* OptionModel.m in Sources */,
 				47E7CA301A9C0A4C00B534E2 /* VideoListController.m in Sources */,
 				47226F5B1A8262B700EF228C /* VideoModel.m in Sources */,

@@ -11,6 +11,7 @@
 #import "FilterController.h"
 #import "CategoryController.h"
 #import "VideoListController.h"
+#import "MainController.h"
 
 #import "DataManager.h"
 #import "Utils.h"
@@ -26,39 +27,40 @@
 
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [[DataManager manager] fetchCategoriesForce:YES].then(^() {
-    FilterController *fc = [[FilterController alloc] init];
-    OptionModel *o = [[OptionModel alloc] init];
-    o.category = @"All";
-    fc.optionModel = o;
+  //    FilterController *fc = [[FilterController alloc] init];
+  //    OptionModel *o = [[OptionModel alloc] init];
+  //    o.category = @"All";
+  //    fc.optionModel = o;
+  //
+  //    UINavigationController *nfc =
+  //        [[UINavigationController alloc] initWithRootViewController:fc];
+  //
+  //    VideoListController *vc = [[VideoListController alloc] init];
+  //    vc.optionModel = o;
+  //
+  //    vc.filterController = fc;
+  //
+  //    //  HomeController *homeController = [[HomeController alloc] init];
+  //
+  //    //    CategoryController *c = [[CategoryController alloc] init];
+  //
+  //    UINavigationController *navigationController =
+  //        [[UINavigationController alloc] initWithRootViewController:vc];
+  //
+  //    MMDrawerController *dc = [[MMDrawerController alloc]
+  //        initWithCenterViewController:navigationController
+  //           rightDrawerViewController:nfc];
+  //    [dc setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+  //    [dc setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
 
-    UINavigationController *nfc =
-        [[UINavigationController alloc] initWithRootViewController:fc];
+  MainController *mainController = [[MainController alloc] init];
+  UINavigationController *navigationController = [[UINavigationController alloc]
+      initWithRootViewController:mainController];
 
-    VideoListController *vc = [[VideoListController alloc] init];
-    vc.optionModel = o;
+  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+  self.window.rootViewController = mainController;
 
-    vc.filterController = fc;
-
-    //  HomeController *homeController = [[HomeController alloc] init];
-
-    //    CategoryController *c = [[CategoryController alloc] init];
-
-    UINavigationController *navigationController =
-        [[UINavigationController alloc] initWithRootViewController:vc];
-
-    MMDrawerController *dc = [[MMDrawerController alloc]
-        initWithCenterViewController:navigationController
-           rightDrawerViewController:nfc];
-    [dc setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
-    [dc setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
-
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = dc;
-
-    [self.window makeKeyAndVisible];
-    //    NSLog(@"%@", [o buildParams]);
-  });
+  [self.window makeKeyAndVisible];
 
   return YES;
 }

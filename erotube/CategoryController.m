@@ -25,6 +25,9 @@
   _manager = [DataManager manager];
   [_tableView registerClass:[FilterHeaderCell class]
       forCellReuseIdentifier:@"CategoryCell"];
+  [_manager fetchCategoriesForce:NO].then(^() {
+    [_tableView reloadData];
+  });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,8 +55,8 @@
   return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  
+- (void)tableView:(UITableView *)tableView
+    didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 @end
