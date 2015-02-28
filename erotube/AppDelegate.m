@@ -54,8 +54,6 @@
   //    [dc setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
 
   MainController *mainController = [[MainController alloc] init];
-  UINavigationController *navigationController = [[UINavigationController alloc]
-      initWithRootViewController:mainController];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   self.window.rootViewController = mainController;

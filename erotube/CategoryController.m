@@ -10,6 +10,10 @@
 
 #import "DataManager.h"
 #import "FilterHeaderCell.h"
+#import "VideoListController.h"
+#import "FilterController.h"
+
+#import <MMDrawerController/MMDrawerController.h>
 
 @interface CategoryController ()
 
@@ -18,6 +22,14 @@
 @end
 
 @implementation CategoryController
+
+- (NSString *)title {
+  return @"Category";
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+  return UIInterfaceOrientationMaskPortrait;
+}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -57,6 +69,19 @@
 
 - (void)tableView:(UITableView *)tableView
     didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  NSString *category = _manager.categories[indexPath.row];
+  OptionModel *option = [[OptionModel alloc] init];
+  option.category = category;
+  VideoListController *videoListController = [[VideoListController alloc] init];
+  videoListController.optionModel = option;
+  FilterController *filterController = [[FilterController alloc] init];
+  filterController.optionModel = option;
+  MMDrawerController *drawerController = [[MMDrawerController alloc]
+      initWithCenterViewController:videoListController
+         rightDrawerViewController:filterController];
+  [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+  [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+  [self.navigationController pushViewController:drawerController animated:YES];
 }
 
 @end

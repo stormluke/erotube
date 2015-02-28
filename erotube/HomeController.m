@@ -77,6 +77,10 @@ const NSInteger VIDEOS_PER_CATEGORY = 3;
                     animated:YES];
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+  self.hidesBottomBarWhenPushed = NO;
+}
+
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
 }
@@ -183,6 +187,7 @@ const NSInteger VIDEOS_PER_CATEGORY = 3;
     VideoDetailController *videoDetailController =
         [[VideoDetailController alloc] init];
     videoDetailController.videoModel = videoModel;
+    self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:videoDetailController
                                          animated:YES];
   }

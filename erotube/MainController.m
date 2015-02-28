@@ -8,24 +8,43 @@
 
 #import "MainController.h"
 
+#import "HomeController.h"
+#import "CategoryController.h"
+
 @interface MainController ()
+
+@property(nonatomic, strong) HomeController *homeController;
+@property(nonatomic, strong) CategoryController *categoryController;
 
 @end
 
 @implementation MainController
 
+- (void)loadView {
+  [super loadView];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+  [super viewDidDisappear:animated];
+  self.hidesBottomBarWhenPushed = NO;
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view from its nib.
+
+  _homeController = [[HomeController alloc] init];
+  _categoryController = [[CategoryController alloc] init];
+  UINavigationController *navHome = [[UINavigationController alloc]
+      initWithRootViewController:_homeController];
+  UINavigationController *navCategory = [[UINavigationController alloc]
+      initWithRootViewController:_categoryController];
+  [self setViewControllers:@[ navHome, navCategory ] animated:YES];
+  [self setSelectedViewController:navHome];
 }
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
-}
-
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-  NSLog(@"%zd", item.tag);
 }
 
 @end

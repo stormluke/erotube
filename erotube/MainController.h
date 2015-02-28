@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainController : UIViewController<UITabBarDelegate>
-
-@property(nonatomic, strong) IBOutlet UITabBar *tabBar;
+@interface MainController : UITabBarController<UITabBarControllerDelegate>
 
 @end
