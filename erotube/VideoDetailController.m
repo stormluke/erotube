@@ -32,10 +32,6 @@ typedef NS_ENUM(NSInteger, ETVideoDetailControllerState) {
 
 @implementation VideoDetailController
 
-- (NSString *)title {
-  return @"Video";
-}
-
 - (NSUInteger)supportedInterfaceOrientations {
   return UIInterfaceOrientationMaskPortrait;
 }
@@ -73,6 +69,8 @@ typedef NS_ENUM(NSInteger, ETVideoDetailControllerState) {
       forCellReuseIdentifier:@"VideoListCell"];
   [_tableView registerNib:[UINib nibWithNibName:@"VideoListHeader" bundle:nil]
       forHeaderFooterViewReuseIdentifier:@"VideoListHeader"];
+
+  self.title = @"Video";
 }
 
 - (void)didReceiveMemoryWarning {

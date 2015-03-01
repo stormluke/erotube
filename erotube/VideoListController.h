@@ -11,11 +11,16 @@
 #import "OptionModel.h"
 #import "FilterController.h"
 
+#import <MMDrawerController/MMDrawerController.h>
+
 @interface VideoListController
     : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property(nonatomic, strong) IBOutlet UITableView *tableView;
 @property(nonatomic, strong) OptionModel *optionModel;
 @property(nonatomic, strong) FilterController *filterController;
+@property(nonatomic, strong) MMDrawerController *drawerController;
+
+- (void)showFilter;
 
 @end

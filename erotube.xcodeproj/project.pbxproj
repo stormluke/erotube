@@ -148,6 +148,8 @@
 				47985D461A9ABF4500E71A1A /* CategoryController.m */,
 				47E7CA2D1A9C0A4C00B534E2 /* VideoListController.h */,
 				47E7CA2E1A9C0A4C00B534E2 /* VideoListController.m */,
+				4739B5D31AA217610088EB84 /* MainController.h */,
+				4739B5D41AA217610088EB84 /* MainController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -164,8 +166,6 @@
 				477997601A845BB200DC7539 /* VideoListHeader.m */,
 				4761BD141A88529800FCDDB5 /* FilterHeaderCell.h */,
 				4761BD151A88529800FCDDB5 /* FilterHeaderCell.m */,
-				4739B5D31AA217610088EB84 /* MainController.h */,
-				4739B5D41AA217610088EB84 /* MainController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";

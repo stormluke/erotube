@@ -38,6 +38,15 @@
       initWithRootViewController:_homeController];
   UINavigationController *navCategory = [[UINavigationController alloc]
       initWithRootViewController:_categoryController];
+  UITabBarItem *itemHome = [[UITabBarItem alloc]
+      initWithTabBarSystemItem:UITabBarSystemItemMostRecent
+                           tag:0];
+  navHome.tabBarItem = itemHome;
+  UITabBarItem *itemCategory =
+      [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemSearch
+                                                 tag:1];
+  navCategory.tabBarItem = itemCategory;
+
   [self setViewControllers:@[ navHome, navCategory ] animated:YES];
   [self setSelectedViewController:navHome];
 }

@@ -12,6 +12,7 @@
 #import "VideoDetailController.h"
 
 #import <SVPullToRefresh/SVPullToRefresh.h>
+#import <MMDrawerController/MMDrawerBarButtonItem.h>
 
 typedef NS_ENUM(NSInteger, ETVideoListControllerState) {
   ETVideoListControllerStateNormal,
@@ -28,10 +29,6 @@ typedef NS_ENUM(NSInteger, ETVideoListControllerState) {
 @end
 
 @implementation VideoListController
-
-- (NSString *)title {
-  return @"VideoList";
-}
 
 - (NSUInteger)supportedInterfaceOrientations {
   return UIInterfaceOrientationMaskPortrait;
@@ -50,12 +47,19 @@ typedef NS_ENUM(NSInteger, ETVideoListControllerState) {
 
   __weak VideoListController *self_ = self;
   _filterController.didChangeOption = ^(OptionModel *option) {
-    NSLog(@"Changed");
-    NSLog(@"%@", option);
+    self_.optionModel = option;
     self_.state = ETVideoListControllerStateUpdating;
     [self_.tableView reloadData];
     [self_.tableView triggerPullToRefresh];
   };
+  self.title = _optionModel.category;
+}
+
+- (void)showFilter {
+  [_drawerController toggleDrawerSide:MMDrawerSideRight
+                             animated:YES
+                           completion:^(BOOL completion){
+                           }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -104,9 +108,6 @@ typedef NS_ENUM(NSInteger, ETVideoListControllerState) {
           [_tableView reloadData];
           [_tableView.pullToRefreshView stopAnimating];
           [_tableView.infiniteScrollingView stopAnimating];
-        })
-        .catch(^(NSError *error) {
-          NSLog(@"%@", error);
         });
   } else {
     [_tableView.infiniteScrollingView stopAnimating];

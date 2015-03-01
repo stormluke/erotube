@@ -14,6 +14,7 @@
 #import "FilterController.h"
 
 #import <MMDrawerController/MMDrawerController.h>
+#import <MMDrawerController/MMDrawerBarButtonItem.h>
 
 @interface CategoryController ()
 
@@ -23,12 +24,17 @@
 
 @implementation CategoryController
 
-- (NSString *)title {
-  return @"Category";
-}
-
 - (NSUInteger)supportedInterfaceOrientations {
   return UIInterfaceOrientationMaskPortrait;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [_tableView deselectRowAtIndexPath:_tableView.indexPathForSelectedRow
+                            animated:YES];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+  self.hidesBottomBarWhenPushed = NO;
 }
 
 - (void)viewDidLoad {
@@ -40,6 +46,7 @@
   [_manager fetchCategoriesForce:NO].then(^() {
     [_tableView reloadData];
   });
+  self.title = @"Category";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,11 +83,18 @@
   videoListController.optionModel = option;
   FilterController *filterController = [[FilterController alloc] init];
   filterController.optionModel = option;
+  videoListController.filterController = filterController;
   MMDrawerController *drawerController = [[MMDrawerController alloc]
       initWithCenterViewController:videoListController
          rightDrawerViewController:filterController];
   [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
   [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+  videoListController.drawerController = drawerController;
+  MMDrawerBarButtonItem *filterButton =
+      [[MMDrawerBarButtonItem alloc] initWithTarget:videoListController
+                                             action:@selector(showFilter)];
+  drawerController.navigationItem.rightBarButtonItem = filterButton;
+  self.hidesBottomBarWhenPushed = YES;
   [self.navigationController pushViewController:drawerController animated:YES];
 }
 

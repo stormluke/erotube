@@ -109,8 +109,7 @@ typedef NS_ENUM(NSInteger, ETOptionsIndex) {
 - (NSInteger)selectsForIndex:(NSInteger)index {
   switch (index) {
     case ETOptionsIndexCategory: {
-      NSInteger select =
-          [_optionNames[ET_OPTIONS_CATEGORY] indexOfObject:_category];
+      NSInteger select = [_manager.categories indexOfObject:_category];
       if (select != NSNotFound) {
         return select;
       }

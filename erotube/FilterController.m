@@ -17,16 +17,13 @@
 
 @implementation FilterController
 
-- (NSString *)title {
-  return @"Filter";
-}
-
 - (void)viewDidLoad {
   [super viewDidLoad];
   [_tableView registerClass:[UITableViewCell class]
       forCellReuseIdentifier:@"OptionCell"];
   [_tableView registerClass:[FilterHeaderCell class]
       forCellReuseIdentifier:@"FilterHeaderCell"];
+  self.title = @"Filter";
 }
 
 - (void)didReceiveMemoryWarning {

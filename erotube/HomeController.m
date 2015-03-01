@@ -34,10 +34,6 @@ const NSInteger VIDEOS_PER_CATEGORY = 3;
 
 @implementation HomeController
 
-- (NSString *)title {
-  return @"Home";
-}
-
 - (NSUInteger)supportedInterfaceOrientations {
   return UIInterfaceOrientationMaskPortrait;
 }
@@ -55,6 +51,7 @@ const NSInteger VIDEOS_PER_CATEGORY = 3;
   [_videoTableView registerNib:[UINib nibWithNibName:@"VideoListHeader"
                                               bundle:nil]
       forHeaderFooterViewReuseIdentifier:@"VideoListHeader"];
+  self.title = @"Home";
 }
 
 - (void)didMoveToParentViewController:(UIViewController *)parent {
