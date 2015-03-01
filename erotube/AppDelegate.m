@@ -7,17 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "HomeController.h"
-#import "FilterController.h"
-#import "CategoryController.h"
-#import "VideoListController.h"
 #import "MainController.h"
-
-#import "DataManager.h"
-#import "Utils.h"
-#import "OptionModel.h"
-
-#import <MMDrawerController/MMDrawerController.h>
+#import "Reachability.h"
 
 @interface AppDelegate ()
 
@@ -27,40 +18,30 @@
 
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  //    FilterController *fc = [[FilterController alloc] init];
-  //    OptionModel *o = [[OptionModel alloc] init];
-  //    o.category = @"All";
-  //    fc.optionModel = o;
-  //
-  //    UINavigationController *nfc =
-  //        [[UINavigationController alloc] initWithRootViewController:fc];
-  //
-  //    VideoListController *vc = [[VideoListController alloc] init];
-  //    vc.optionModel = o;
-  //
-  //    vc.filterController = fc;
-  //
-  //    //  HomeController *homeController = [[HomeController alloc] init];
-  //
-  //    //    CategoryController *c = [[CategoryController alloc] init];
-  //
-  //    UINavigationController *navigationController =
-  //        [[UINavigationController alloc] initWithRootViewController:vc];
-  //
-  //    MMDrawerController *dc = [[MMDrawerController alloc]
-  //        initWithCenterViewController:navigationController
-  //           rightDrawerViewController:nfc];
-  //    [dc setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
-  //    [dc setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+  Reachability *reachability = [Reachability reachabilityForInternetConnection];
+  NetworkStatus remoteHostStatus = [reachability currentReachabilityStatus];
+  if (remoteHostStatus == NotReachable) {
+    UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"No Connection"
+                                   message:@"This app needs Internet Connection"
+                                  delegate:self
+                         cancelButtonTitle:@"Exit"
+                         otherButtonTitles:nil];
+    [alert show];
+  } else {
+    MainController *mainController = [[MainController alloc] init];
 
-  MainController *mainController = [[MainController alloc] init];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = mainController;
 
-  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  self.window.rootViewController = mainController;
-
-  [self.window makeKeyAndVisible];
-
+    [self.window makeKeyAndVisible];
+  }
   return YES;
+}
+
+- (void)alertView:(UIAlertView *)alertView
+    clickedButtonAtIndex:(NSInteger)buttonIndex {
+  exit(0);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

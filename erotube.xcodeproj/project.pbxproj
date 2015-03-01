@@ -25,6 +25,8 @@
 		477997631A845BB200DC7539 /* VideoListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 477997611A845BB200DC7539 /* VideoListHeader.xib */; };
 		47985D481A9ABF4500E71A1A /* CategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47985D461A9ABF4500E71A1A /* CategoryController.m */; };
 		47985D491A9ABF4500E71A1A /* CategoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47985D471A9ABF4500E71A1A /* CategoryController.xib */; };
+		47A35CA21AA2F8DA00EE36E1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A35CA11AA2F8DA00EE36E1 /* Reachability.m */; };
+		47A35CA41AA2F94300EE36E1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A35CA31AA2F94300EE36E1 /* SystemConfiguration.framework */; };
 		47A933E61A8465B2000C7619 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A933E51A8465B2000C7619 /* Utils.m */; };
 		47AB6C361A9826A60055A459 /* OptionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 47AB6C351A9826A60055A459 /* OptionModel.m */; };
 		47B4ED7D1A85B8DC00775993 /* VideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B4ED7C1A85B8DC00775993 /* VideoController.m */; };
@@ -78,6 +80,9 @@
 		47985D451A9ABF4500E71A1A /* CategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryController.h; sourceTree = "<group>"; };
 		47985D461A9ABF4500E71A1A /* CategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryController.m; sourceTree = "<group>"; };
 		47985D471A9ABF4500E71A1A /* CategoryController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryController.xib; sourceTree = "<group>"; };
+		47A35CA01AA2F8DA00EE36E1 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		47A35CA11AA2F8DA00EE36E1 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		47A35CA31AA2F94300EE36E1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		47A933E41A8465B2000C7619 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		47A933E51A8465B2000C7619 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		47AB6C341A9826A60055A459 /* OptionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionModel.h; sourceTree = "<group>"; };
@@ -109,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47A35CA41AA2F94300EE36E1 /* SystemConfiguration.framework in Frameworks */,
 				4729E3521A85AAE10062799B /* MediaPlayer.framework in Frameworks */,
 				B02074564501F8B0FA6DE177 /* libPods-erotube.a in Frameworks */,
 			);
@@ -237,6 +243,8 @@
 		47CB05001A825B7500AD075F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				47A35CA01AA2F8DA00EE36E1 /* Reachability.h */,
+				47A35CA11AA2F8DA00EE36E1 /* Reachability.m */,
 				47CB05011A825B7500AD075F /* Info.plist */,
 				47CB05021A825B7500AD075F /* main.m */,
 			);
@@ -272,6 +280,7 @@
 		55A815A6CB078540EED5FA1B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				47A35CA31AA2F94300EE36E1 /* SystemConfiguration.framework */,
 				4729E3511A85AAE10062799B /* MediaPlayer.framework */,
 				950883AA3DE4CFA13F7659F4 /* libPods-erotube.a */,
 			);
@@ -437,6 +446,7 @@
 				47985D481A9ABF4500E71A1A /* CategoryController.m in Sources */,
 				477997621A845BB200DC7539 /* VideoListHeader.m in Sources */,
 				47226F471A82615C00EF228C /* VideoDetailController.m in Sources */,
+				47A35CA21AA2F8DA00EE36E1 /* Reachability.m in Sources */,
 				47D354831A83030E00E3139F /* DataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
